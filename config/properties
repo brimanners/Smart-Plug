@@ -1,0 +1,21 @@
+# Environment configuration
+# -------------------------
+# If set to test, no external calls will be made, set to production to call actual endpoints
+
+# If active, each external call will return a fixture
+environment:test
+
+# If active, each external call will execute
+# environment:prod
+
+
+#######################
+# Smartplug credentials
+#######################
+
+userId: username_here
+password: password_here
+
+
+
+

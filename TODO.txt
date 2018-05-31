@@ -1,0 +1,29 @@
+Think about set-up.
+
+I.e. configuration that would need to be set-up if it were an actual cloneable project
+
+    1) scripts.sh --> setting up PYTHON paths... WIP.. Should always be in home path
+    2) Console.log --> needs to be created and with rw-rw-rw permissions chmod 666
+    3) Crontab entry to start scripts... or just in the README?
+
+
+
+    1) To get a token
+
+    curl -X POST https://wap.tplinkcloud.com/ -H 'cache-control: no-cache' -H 'content-type: application/json' -d '{"method": "login", "params": { "appType": "Kasa_Android", "cloudUserName": "{emailAddress}", "cloudPassword": "{password}", "terminalUUID": "d28fd119-9675-4659 b9a4-5c60b624723b"}}'
+
+    note: UUID - Is just a handshake reference, so can stay the same - created
+
+
+    2) Use the token to get device list
+    curl -s --request POST "https://wap.tplinkcloud.com?token={tokenId} HTTP/1.1" --data '{"method":"getDeviceList"}' --header "Content-Type: application/json"
+
+    3) Use the device to turn on/off the device
+
+    Turn on
+
+    curl --request POST "https://aps1-wap.tplinkcloud.com/?token={tokenId} HTTP/1.1" --data '{"method":"passthrough", "params": {"deviceId": "{deviceID}", "requestData": "{\"system\":{\"set_relay_state\":{\"state\":1}}}" }}' --header "Content-Type: application/json"
+
+    Turn off
+
+    curl --request POST "https://aps1-wap.tplinkcloud.com/?token={tokenId} HTTP/1.1" --data '{"method":"passthrough", "params": {"deviceId": "{deviceID}", "requestData": "{\"system\":{\"set_relay_state\":{\"state\":0}}}" }}' --header "Content-Type: application/json"
