@@ -19,4 +19,5 @@
 ##### You will also need to provide your KASA home account credentials in the config/properties file in the userid and password fields
 
 ##### You can also comment on/off the environment in the config.properties for local testing.
-##### Running in test mode will serve up fake fixture files to mock the api calls
+##### Running in test mode will serve up fake fixture files to mock the api calls.
+##### You will need though to match the alias name in the fixture file - currently -  "alias": "Smart Plug #1" (e.g. ./scripts.sh "Smart Plug #1" on)
