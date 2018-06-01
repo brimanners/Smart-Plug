@@ -18,4 +18,5 @@
 #### Configuration
 ##### You will also need to provide your KASA home account credentials in the config/properties file in the userid and password fields
 
-#### You can also comment on/off the environment for local testing. RUnning in test mode will serve up fake fixture files to mock the api calls
+##### You can also comment on/off the environment in the config.properties for local testing.
+##### Running in test mode will serve up fake fixture files to mock the api calls
